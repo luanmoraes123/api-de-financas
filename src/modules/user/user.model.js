@@ -11,3 +11,11 @@ export const save = (params) => {
 export const remove = (id) => {
   return knex('users').delete(id);
 }
+
+export const get = (id) => {
+  return knex('users').where({ id }).first();
+}
+
+export const update = (id, params) => {
+  return knex('users').where({ id }).update(params);
+}

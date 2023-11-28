@@ -8,7 +8,7 @@ const app = express();
 
 app.use(express.json());
 
-app.get('/user', useRoute)
+app.use('/user', useRoute);
 
 
 app.listen(8080, () => {
