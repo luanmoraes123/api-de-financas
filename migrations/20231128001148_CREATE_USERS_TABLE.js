@@ -7,7 +7,7 @@ export const up = function (knex) {
     table.bigIncrements('id');
     table.string('name');
     table.string('email');
-    table.string('passord');
+    table.string('password');
     table.timestamps(true, true);
   })
 };

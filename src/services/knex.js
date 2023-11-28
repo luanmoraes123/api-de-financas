@@ -1,10 +1,6 @@
-let conn;
+import knex from 'knex';
+import knexConfig from '../config/database.js';
 
-const knexService = () => {
-  if (!conn) {
-    conn = ''; //TODO connect to db
-  }
-  return conn;
-}
+const knexConnect = knex(knexConfig);
 
-export default knexService;
+export default knexConnect;
