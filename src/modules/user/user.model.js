@@ -2,7 +2,7 @@ import knex from '../../services/knex.js';
 import bcrypt from 'bcrypt';
 
 export const getAll = () => {
-  return knex('users');
+  return knex('users').select('id', 'name', 'email', 'created_at', 'updated_at');
 }
 
 export const save = (params) => {
@@ -15,7 +15,7 @@ export const remove = (id) => {
 }
 
 export const get = (id) => {
-  return knex('users').where({ id }).first();
+  return knex('users').where({ id }).select('id', 'name', 'email', 'created_at', 'updated_at').first();
 }
 
 export const update = (id, params) => {
