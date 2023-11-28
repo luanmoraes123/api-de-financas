@@ -21,3 +21,7 @@ export const get = (id) => {
 export const update = (id, params) => {
   return knex('users').where({ id }).update(params);
 }
+
+export const getByEmail = (email) => {
+  return knex('users').where({ email }).first();
+}
