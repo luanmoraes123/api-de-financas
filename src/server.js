@@ -4,8 +4,9 @@ import cors from 'cors';
 dotenv.config();
 import useRoute from './modules/user/user.route.js'
 import authRouter from './modules/auth/auth.route.js'
+import bearerToken from 'express-bearer-token';
 const app = express();
-
+app.use(bearerToken());
 
 
 app.use(express.json());

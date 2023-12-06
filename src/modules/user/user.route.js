@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { getAll, get, save, remove, update } from './user.model.js';
+import { getMe } from './user.service.js';
 
 const router = Router();
 
@@ -7,6 +8,14 @@ router.get('/', async (req, res) => {
   const data = await getAll();
   res.status(200).json({ data });
 });
+
+router.get('/me', async (req, res) => {
+  const data = await getMe(req.token);
+  if (data.error) {
+    return res.status(403).json({ error: data.error });
+  }
+  return res.status(200).json({ data });
+})
 
 router.get('/:id', async (req, res) => {
   const data = await get(req.params.id);
