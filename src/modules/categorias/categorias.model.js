@@ -18,7 +18,7 @@ export const save = (params) => {
 }
 
 export const remove = (id, userId) => {
-  return knex(TABLE).delete(id).andWhere({ user_id: userId });
+  return knex(TABLE).delete().where({ id }).andWhere({ user_id: userId });
 }
 
 

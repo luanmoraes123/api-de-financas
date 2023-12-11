@@ -11,7 +11,7 @@ export const save = (params) => {
 }
 
 export const remove = (id) => {
-  return knex('users').delete(id);
+  return knex('users').delete().where({ id });
 }
 
 export const get = (id) => {

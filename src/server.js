@@ -13,7 +13,7 @@ app.use(bearerToken());
 app.use(express.json());
 app.use(cors());
 
-app.use('/user', useRouter);
+app.use('/users', useRouter);
 app.use('/auth', authRouter);
 app.use('/categorias', categoriasRouter);
 
