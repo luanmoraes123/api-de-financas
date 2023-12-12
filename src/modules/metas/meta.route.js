@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { getAll, get, save, remove, update } from './categorias.model.js';
+import { getAll, get, save, remove, update } from './meta.model.js';
 import { authMiddleware } from '../../middleware/authMiddleware.js'
 
 const router = Router();
