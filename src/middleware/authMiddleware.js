@@ -8,6 +8,9 @@ export const authMiddleware = async (req, res, next) => {
       return res.status(403).json({ error: 'Token invalido' });
     }
     const user = await get(id);
+    if (!user) {
+      return res.status(400).json({ error: 'Usuario nao encontrado' });
+    }
     req.user = user;
     return next();
   } catch (error) {
